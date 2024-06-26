@@ -10,7 +10,12 @@ const MovieCard = ({movieResult} : Props) => {
     <Card className="border-0">
         <CardContent>
             <div>
-                <img src={`https://image.tmdb.org/t/p/w500${movieResult.poster_path}`} alt="poster" />
+                <img src={`https://image.tmdb.org/t/p/w500${movieResult.poster_path}`} alt="poster"
+                className="hover:opacity-80 transition-all "
+                />
+                <h1 className="mt-3">
+                  {movieResult.title ? movieResult.title : movieResult.name}
+                </h1>
             </div>
         </CardContent>
     </Card>

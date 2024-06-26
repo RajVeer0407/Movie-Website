@@ -5,7 +5,7 @@ const MovieList = () => {
   const {movieLists} = useMovieList();
   console.log(movieLists)
   return (
-    <div>
+    <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid:cols-2 gap-y-3">
       {movieLists?.map((movieList)=> (
         <div key={movieList.id}><MovieCard movieResult={movieList}/></div>
       ))}
@@ -13,4 +13,4 @@ const MovieList = () => {
   )
 }
 
-export default MovieList
+export default MovieList;
