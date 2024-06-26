@@ -1,12 +1,13 @@
 import useMovieList from "@/hooks/useMovies"
+import MovieCard from "./MovieCard";
 
 const MovieList = () => {
   const {movieLists} = useMovieList();
   console.log(movieLists)
   return (
     <div>
-      {movieLists?.map((movie)=> (
-        <p>{movie.title}</p>
+      {movieLists?.map((movieList)=> (
+        <div key={movieList.id}><MovieCard movieResult={movieList}/></div>
       ))}
     </div>
   )

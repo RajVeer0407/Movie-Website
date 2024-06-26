@@ -1,7 +1,7 @@
 import apiClient from "@/services/api-client"
 import { useEffect, useState } from "react";
 
-interface MovieResult {
+export interface MovieResult {
     adult : boolean;
     id : number;
     original_language : string;
