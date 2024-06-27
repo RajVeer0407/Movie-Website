@@ -1,4 +1,5 @@
 import logo from "../assets/logo.jpeg";
+import Genres from "./Genres";
 import { Input } from "./ui/input";
 import { Link } from "react-router-dom";
 
@@ -12,7 +13,7 @@ const Navbar = () => {
         </form>
         <div className="md:block sm:hidden hidden">
           <div className="flex gap-6 items-center">
-            <div>Action</div>
+            <Genres/>
             <Link to={'/movies'}>
             <div>Movies</div>
             </Link>
