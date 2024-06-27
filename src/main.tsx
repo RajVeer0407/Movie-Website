@@ -4,15 +4,16 @@ import App from './App.tsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { GenresProvider } from './contex/genres.context.tsx'
+import { SearchProvider } from './contex/searchResult.context.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-    
-    <GenresProvider>
-    <App />
-    </GenresProvider>
-    
+      <SearchProvider>
+        <GenresProvider>
+          <App />
+        </GenresProvider>
+      </SearchProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

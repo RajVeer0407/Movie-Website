@@ -1,9 +1,11 @@
+import { useState } from "react";
 import logo from "../assets/logo.jpeg";
 import Genres from "./Genres";
 import { Input } from "./ui/input";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [input, setInput] = useState()
   return (
     <div className="flex justify-between md:px-10 sm:px-5 px-5 items-center gap-3 text-xl my-3">
       <img src={logo} alt="logo" className="md:h-14 sm:h-9 h-9 hover:opacity-80 cursor-pointer" />
