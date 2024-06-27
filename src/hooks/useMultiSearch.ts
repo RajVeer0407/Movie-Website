@@ -1,10 +1,14 @@
 import apiClient from "@/services/api-client"
 
 
-const useMultiSearch  = () => {
+const useMultiSearch  = (input : String) => {
 
 
     const fetchSearch = async () => {
-        const res = await apiClient.get("/search/multi");
-    }
-}
+        const res = await apiClient.get("/search/multi", {
+            params : {
+                query : input,
+            },
+        });
+    };
+};

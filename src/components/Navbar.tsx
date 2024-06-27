@@ -1,17 +1,29 @@
-import { useState } from "react";
+//@ts-nocheck
+import { useContext, useState } from "react";
 import logo from "../assets/logo.jpeg";
 import Genres from "./Genres";
 import { Input } from "./ui/input";
 import { Link } from "react-router-dom";
+import { SearchResultContext } from "@/contex/searchResult.context";
 
 const Navbar = () => {
-  const [input, setInput] = useState()
+  const {searchText, setSearchText} = useContext(SearchResultContext);
+  const handelChange = (e : React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(e.target.value);
+  };
+
+console.log(searchText)
+
+
   return (
     <div className="flex justify-between md:px-10 sm:px-5 px-5 items-center gap-3 text-xl my-3">
       <img src={logo} alt="logo" className="md:h-14 sm:h-9 h-9 hover:opacity-80 cursor-pointer" />
       <div className="flex gap-3 items-center">
         <form action="">
-          <Input placeholder="search" className="border-gray-500 rounded-2xl md:w-fit sm:w-[30vw]"/>
+          <Input placeholder="search" className="border-gray-500 rounded-2xl md:w-fit sm:w-[30vw]"
+          value={searchText}
+          onChange={handelChange}
+          />
         </form>
         <div className="md:block sm:hidden hidden">
           <div className="flex gap-6 items-center">
