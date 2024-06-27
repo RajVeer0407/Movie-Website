@@ -94,26 +94,28 @@ import { useNavigate } from "react-router";
 
 
 const Genres = () => {
-    const {genres, setGenres} = useContext(GenresContext)
+    const {genres, setGenres} = useContext(GenresContext);
+    const [genreName, setGenreName] = useState();
     console.log(genres);
     const navigate = useNavigate();
+    console.log(genreName)
 
     const onChange = (data) =>{
         setGenres(data);
         navigate("/movies");
     }
-    
+    // { genres ? "Genres" : genreName}
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <h1 className="cursor-pointer">Genres</h1>
+        <h1 className="cursor-pointer">Genres</h1>  
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup value={genres} onValueChange={onChange}>
             {genreList.map((genre) => (
 
-          <DropdownMenuRadioItem value={genre.id}>
+          <DropdownMenuRadioItem onClick={()=> setGenreName(genre.name)} value={genre.id}>
             {genre.name}
             </DropdownMenuRadioItem>
             ))}
@@ -125,4 +127,4 @@ const Genres = () => {
   );
 };
 
-export default Genres
+export default Genres;

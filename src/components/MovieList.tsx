@@ -1,8 +1,11 @@
 import useMovieList from "@/hooks/useMovies"
 import MovieCard from "./MovieCard";
+import { useContext } from "react";
+import { GenresContext } from "@/contex/genres.context";
 
 const MovieList = () => {
-  const {movieLists} = useMovieList();
+  const {genres} = useContext(GenresContext);
+  const {movieLists} = useMovieList(genres);
   console.log(movieLists)
   return (
     <div className="p-3 mb-4">
