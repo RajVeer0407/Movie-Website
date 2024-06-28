@@ -1,8 +1,6 @@
-import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
@@ -100,7 +98,7 @@ const Genres = () => {
     const navigate = useNavigate();
     console.log(genreName)
 
-    const onChange = (data) =>{
+    const onChange = (data: number) =>{
         setGenres(data);
         navigate("/movies");
     }
