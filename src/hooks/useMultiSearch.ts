@@ -1,7 +1,10 @@
+import { SearchResultContext } from "@/contex/searchResult.context";
 import apiClient from "@/services/api-client"
+import { useContext, useEffect } from "react";
 
 
 const useMultiSearch  = (input : String) => {
+    const {setSearchData} = useContext(SearchResultContext)
 
 
     const fetchSearch = async () => {
@@ -10,5 +13,13 @@ const useMultiSearch  = (input : String) => {
                 query : input,
             },
         });
+
+        setSearchData(res.data.results)
     };
+
+    useEffect(()=>{
+        fetchSearch();
+    },[input])
 };
+
+export default useMultiSearch;

@@ -1,9 +1,28 @@
-import React from 'react'
+import { SearchResultContext } from '@/contex/searchResult.context'
+import useMultiSearch from '@/hooks/useMultiSearch';
+import React, { useContext } from 'react'
+import MovieCard from './MovieCard';
+import TvShowCard from './TvShowCard';
 
 const SearchList = () => {
-  return (
-    <div>SearchList</div>
-  )
+    const { searchData, searchText } = useContext(SearchResultContext);
+    useMultiSearch(searchText);
+    console.log(searchData)
+    return (
+        <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid:cols-2 gap-y-3">{
+            searchData?.map((data) => {
+                return(
+                    <div key={data.id}>
+                    {data.media_type === "movie" ? (
+                        <MovieCard movieResult={data} />
+                    ) : (
+                        <TvShowCard tvShowResult={data} />
+                    )}
+                </div>
+                )
+            })}
+        </div>
+    )
 }
 
 export default SearchList
