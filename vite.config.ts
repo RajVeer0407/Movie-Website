@@ -3,8 +3,8 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
  
 export default defineConfig({
-  base:"/Movie-Website/",
   plugins: [react()],
+  base:"/Movie-Website/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
