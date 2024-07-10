@@ -1,17 +1,15 @@
-
 import { useParams } from 'react-router'
 
-const Player = () => {
+const tvPlayer = () => {
     const {playerId} = useParams()
-
-    const movieUrl = `https://vidsrc.xyz/embed/movie/${playerId}`
+    const tvShowUrl = `https://vidsrc.xyz/embed/tv/${playerId}`
   return (
     <div>
         <iframe
         className='w-full h-screen'
         allow='autoplay; encrypted-media; gyroscope; picture-in-picture'
         allowFullScreen
-        src={movieUrl}
+        src={tvShowUrl}
         >
 
         </iframe>
@@ -19,4 +17,4 @@ const Player = () => {
   )
 }
 
-export default Player
+export default tvPlayer
