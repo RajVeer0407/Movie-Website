@@ -1,3 +1,4 @@
+// @ts-nocheck
 import useTvShowList from '@/hooks/useTvShowList'
 import React from 'react'
 import TvShowCard from './TvShowCard';

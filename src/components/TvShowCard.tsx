@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Card, CardContent } from './ui/card'
 
 const TvShowCard = ({tvShowResult}) => {

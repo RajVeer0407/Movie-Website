@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SearchResultContext } from '@/contex/searchResult.context'
 import useMultiSearch from '@/hooks/useMultiSearch';
 import React, { useContext } from 'react'

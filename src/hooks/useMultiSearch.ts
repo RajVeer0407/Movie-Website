@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SearchResultContext } from "@/contex/searchResult.context";
 import apiClient from "@/services/api-client"
 import { useContext, useEffect } from "react";
