@@ -4,7 +4,7 @@ import TvPlayer from "@/components/TvPlayer"
 import SearchList from "@/components/SearchList"
 import Trending from "@/components/Trending/Trending"
 import TvShowList from "@/components/TvShowList"
-import { Route, Routes } from "react-router"
+import { Navigate, Route, Routes } from "react-router"
 
 const AllRoutes = () => {
   return (
@@ -16,6 +16,7 @@ const AllRoutes = () => {
 
         <Route path="/player/:playerId" element={<Player/>}/>
         <Route path="/TvPlayer/:playerId" element={<TvPlayer/>}/>
+        <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
 }
