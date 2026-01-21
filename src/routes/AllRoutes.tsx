@@ -1,6 +1,5 @@
 import MovieList from "@/components/MovieList"
 import Player from "@/components/Player"
-import TvPlayer from "@/components/TvPlayer"
 import SearchList from "@/components/SearchList"
 import Trending from "@/components/Trending/Trending"
 import TvShowList from "@/components/TvShowList"
@@ -15,7 +14,6 @@ const AllRoutes = () => {
         <Route path="/search/:searchName/" element={<SearchList/>}/>
 
         <Route path="/player/:playerId" element={<Player/>}/>
-        <Route path="/TvPlayer/:playerId" element={<TvPlayer/>}/>
     </Routes>
   )
 }
