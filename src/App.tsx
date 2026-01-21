@@ -19,11 +19,7 @@ function App() {
 
   return (
     <>
-      <button onClick={toggleTheme} style={{ padding: "8px", margin: "10px" }}>
-        {theme === "light" ? "🌙 Dark" : "☀ Light"}
-      </button>
-
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <AllRoutes />
     </>
   );
