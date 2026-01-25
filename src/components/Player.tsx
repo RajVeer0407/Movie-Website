@@ -1,10 +1,10 @@
-import React from 'react'
+// import React from 'react'
 import { useParams } from 'react-router'
 
 const Player = () => {
     const {playerId} = useParams()
-
-    const movieUrl = `https://vidsrc-embed.ru/embed/movie/${playerId}`
+    //VIDKING embed link format
+    const movieUrl = `https://www.vidking.net/embed/movie/${playerId}?color=e50914&nextEpisode=true&episodeSelector=true`
   return (
     <div>
         <iframe
